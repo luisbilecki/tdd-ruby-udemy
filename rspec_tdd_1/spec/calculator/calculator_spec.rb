@@ -1,6 +1,7 @@
 require 'calculator'
 
-describe Calculator do
+#RSpec.describe
+describe Calculator, "Sobre a Calculadora" do
   context '#div' do
     it 'divide by 0' do
       expect{subject.div(3,0)}.to raise_error(ZeroDivisionError)
@@ -26,6 +27,6 @@ describe Calculator do
       expect(result).to eq(-12)
     end
 
-    xit 'teste pendente'
+    #xit 'teste pendente'
   end
 end
