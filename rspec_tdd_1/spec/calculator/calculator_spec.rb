@@ -14,7 +14,7 @@ describe Calculator do
 
     it 'with negative numbers' do
       result = subject.sum(-5,-7)
-      expect(result).to eq(-10)
+      expect(result).to eq(-12)
     end
 
     xit 'teste pendente'
