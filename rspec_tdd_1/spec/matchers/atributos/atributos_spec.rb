@@ -2,14 +2,26 @@ require 'pessoa'
 
 describe  'Atributos' do
 
-  before(:each) do
-    @pessoa = Pessoa.new
-  end
+  #before(:each) do
+  #  @pessoa = Pessoa.new
+  #end
 
-  after(:each) do
+ # after(:each) do
+   # @pessoa.nome = "Sem nome!"
+   # puts ">>>>>> #{@pessoa.inspect}"
+  #end
+
+  around(:each) do |teste|
+    puts ">>>>>> ANTES"
+    @pessoa = Pessoa.new
+
+    teste.run
+
     @pessoa.nome = "Sem nome!"
     puts ">>>>>> #{@pessoa.inspect}"
+
   end
+
 
   it 'have_attributes' do
     @pessoa = Pessoa.new
