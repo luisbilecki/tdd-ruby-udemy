@@ -1,4 +1,4 @@
-describe Array.new([1,2,3]), "Array" do
+describe Array.new([1,2,3]), "Array", type: 'collection' do
   #Elementos do array
   it '#include' do
     expect(subject).to include(2)
@@ -10,7 +10,7 @@ describe Array.new([1,2,3]), "Array" do
     expect(subject).to match_array([1,2,3])
   end
 
-  it '#contain_exactly' do
+  it '#contain_exactly', :slow do
     expect(subject).to contain_exactly(1,2,3)
   end
 end
