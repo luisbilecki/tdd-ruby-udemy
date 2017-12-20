@@ -17,6 +17,10 @@ require_relative "../helpers/helper"
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
+  config.define_derived_metadata do |meta|
+      meta[:aggregate_failures] = true
+  end
+
   config.after(:suite) do
     puts ">>>>>>>>> DEPOIS de TODA a suíte de testes"
   end

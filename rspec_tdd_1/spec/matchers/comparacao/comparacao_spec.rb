@@ -19,9 +19,16 @@ describe 'Matchers de Comparação' do
 
   it 'be_between inc' do
     expect(5).to be_between(2,7).inclusive
-    expect(2).to be_between(2,7).inclusive
-    expect(7).to be_between(2,7).inclusive
+    expect(1).to be_between(2,7).inclusive
+    expect(0).to be_between(2,7).inclusive
   end
+
+  #it 'be_between inc - agregando falhas', :aggregate_failures do
+  #it 'be_between inc - agregando falhas', aggregate_failures: true do
+      #expect(5).to be_between(2,7).inclusive
+      #expect(8).to be_between(2,7).inclusive
+     # expect(1).to be_between(2,7).inclusive
+ # end
 
   it 'be_between exc' do
     expect(5).to be_between(2,7).exclusive
