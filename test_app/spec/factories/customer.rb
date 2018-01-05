@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :customer do
-    name "Luís Felipe"
-    email "luis.bilecki@gmail.com"
+    name Faker::Name.name
+    email Faker::Internet.email
   end
 end
