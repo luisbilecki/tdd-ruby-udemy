@@ -11,8 +11,8 @@ RSpec.describe Customer, type: :model do
     expect(customer.full_name).to start_with("Sr. ")
   end
 
-  it '#full_name' do
-    customer = create(:customer, name: "Luís")
+  it '#full_name - sobreescrevendo atributos e usando aliases' do
+    customer = create(:user, name: "Luís")
     expect(customer.full_name).to eq("Sr. Luís")
   end
 
