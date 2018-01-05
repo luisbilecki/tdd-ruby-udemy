@@ -12,4 +12,11 @@ RSpec.describe Order, type: :model do
     expect(order.customer).to be_kind_of(Customer)
   end
 
+  it 'tem mais de um pedido' do
+    #orders = create_list(:order, 3)
+    orders = create_list(:order, 3, description: "Testeeeee")
+    puts orders.inspect
+    expect(orders.count).to eq(3)
+  end
+
 end
