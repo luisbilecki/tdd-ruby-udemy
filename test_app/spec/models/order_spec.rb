@@ -14,9 +14,10 @@ RSpec.describe Order, type: :model do
 
   it 'tem mais de um pedido - create_list' do
     #orders = create_list(:order, 3)
-    orders = create_list(:order, 3, description: "Testeeeee")
+    #orders = create_list(:order, 3, description: "Testeeeee")
+    orders = create_pair(:order)
     puts orders.inspect
-    expect(orders.count).to eq(3)
+    expect(orders.count).to eq(2)
   end
 
   it 'has_many' do
