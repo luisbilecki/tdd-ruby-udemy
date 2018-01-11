@@ -29,6 +29,15 @@ RSpec.describe CustomersController, type: :controller do
         @customer = create(:customer)
     end
 
+    it 'Content-type JSON' do
+      customer_params = attributes_for(:customer)
+      sign_in @member
+      post :create, format: :json, params: {customer: customer_params }
+
+      expect(response.content_type).to eq('application/json')
+
+    end
+
     it 'flash notice' do
       customer_params = attributes_for(:customer)
       sign_in @member
