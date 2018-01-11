@@ -24,10 +24,18 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   context 'as a Logged User' do
-  before do
-      @member = create(:member)
-      @customer = create(:customer)
-  end
+    before do
+        @member = create(:member)
+        @customer = create(:customer)
+    end
+
+    it 'flash notice' do
+      customer_params = attributes_for(:customer)
+      sign_in @member
+      post :create, params: {customer: customer_params }
+
+      expect(flash[:notice]).to match(/successfully created/)
+    end
 
     it 'with valid attributes' do
       customer_params = attributes_for(:customer)
