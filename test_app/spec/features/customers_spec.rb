@@ -17,8 +17,16 @@ RSpec.feature "Customers", type: :feature, js: true do
     fill_in('Name', with: Faker::Name.name)
     fill_in('Email', with: Faker::Internet.email)
     fill_in('Address', with:  Faker::Address.street_address)
+    page.save_screenshot('insercao.png')
 
     click_button('Create Customer')
     expect(page).to have_content('Customer was successfully created.')
+    page.save_screenshot('salvar.png')
+  end
+
+  it 'Ajax' do
+    visit(customers_path)
+    click_link('Add Message')
+    expect(page).to have_content('Yes!')
   end
 end
